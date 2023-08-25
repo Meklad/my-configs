@@ -1,0 +1,42 @@
+"Enable syntax hightlighting"
+syntax enable 
+
+set backspace=indent,eol,start "Make backspace behave like every other editor.
+let mapleader = ',' "The leader key id \, but i change it to , insted
+set number		"Activate line numbers
+
+"---------------Visulas-----------------"
+"To set color scheme"
+colorscheme auto-vim-dark
+
+set t_CO=256 "to force 256 colors"
+set guifont=Fire_Code:h15 "To set the vim font and size, and it's only works with gvim"
+set linespace=15 "To set linespaceing in gvim only"
+
+"Disable right hand scrollbar - Only works in gvim"
+set guioptions-=r
+set guioptions-=R
+
+
+"Disable left hand scrollbar" - Only works in gvim"
+set guioptions-=l
+set guioptions-=L
+
+"---------------Searching---------------"
+set hlsearch "Activate hightlight search"
+set incsearch "Activate Icrement search"
+
+"---------------Mappings---------------"
+"quic edit .vimrc file"
+nmap <Leader>ev :tabedit $MYVIMRC<cr>
+
+"Add search hightlight removel"
+nmap <Leader><space> :nohlsearch<cr>
+
+"---------------Auto-Commands---------------"
+"Auto Source .vimrc"
+"I will add autogroup to fix frezing the screen when auto sourcing"
+augroup autosourcing
+	autocmd!
+	autocmd BufWritePost .vimrc so %
+augroup END
