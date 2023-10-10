@@ -40,3 +40,14 @@ augroup autosourcing
 	autocmd!
 	autocmd BufWritePost .vimrc so %
 augroup END
+
+
+"---------------Split Managments------------"
+set splitbelow "Inforce vim to open new h-split below the current one."
+set splitright "Inforce vim to open new v-split right the current one."
+
+"Set key buingings to move between the split buffers"
+nmap <C-J> <C-W><C-J>
+nmap <C-K> <C-W><C-K>
+nmap <C-H> <C-W><C-H>
+nmap <C-L> <C-W><C-L>
